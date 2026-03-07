@@ -57,7 +57,8 @@ export default function Carousel() {
   return (
     <section
       aria-label="Erbjudanden och nyheter"
-      style={{ background: "var(--paper-warm)", padding: "7rem 0" }}
+      className="section-pad"
+      style={{ background: "var(--paper-warm)" }}
     >
       <div
         style={{
