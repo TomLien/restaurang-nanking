@@ -39,6 +39,17 @@ export default function Nav() {
             Hitta hit
           </a>
         </div>
+
+        <button
+          className={`nav-hamburger${open ? " open" : ""}`}
+          onClick={toggle}
+          aria-label={open ? "Stäng meny" : "Öppna meny"}
+          aria-expanded={open}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
       </nav>
 
       <div className={`nav-drawer${open ? " open" : ""}`} aria-hidden={!open}>
@@ -59,14 +70,6 @@ export default function Nav() {
           Hitta hit
         </a>
         {/* biome-ignore lint/a11y/useValidAnchor: hash navigation link that also closes drawer */}
-        <a
-          href="#hitta-hit"
-          className="btn-lacquer"
-          onClick={close}
-          style={{ marginTop: "0.4rem" }}
-        >
-          Boka bord
-        </a>
       </div>
     </>
   );
