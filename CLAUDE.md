@@ -19,17 +19,22 @@ app/
   root.tsx            # Root layout, meta tags, structured data (JSON-LD), Google Fonts
   routes.ts           # Route config (single index route)
   routes/
-    _index.tsx        # Landing page — assembles all sections, loader serves menu data
+    _index.tsx        # Landing page — assembles all sections, loader fetches menu from Google Sheets
   components/
     Nav.tsx           # Fixed top nav with hamburger drawer (mobile) and desktop links
     Hero.tsx          # Full-viewport hero with Ken Burns bg, lantern SVGs, CTA buttons
     Carousel.tsx      # Auto-advancing image carousel for offers/news
     Menu.tsx          # Tabbed menu with category filtering, SSR fallback for SEO
-    About.tsx         # About section with opening hours, stats, image
+    About.tsx         # About section with stats and image
+    OpeningHours.tsx  # Opening hours table section (dark bg, gold text)
     Location.tsx      # Contact info + embedded Google Maps iframe
   data/
-    menu.ts           # Menu data: typed MenuItem/MenuCategory arrays (8 categories, ~55 items)
+    menu.ts           # Fallback menu data: typed MenuItem/MenuCategory arrays
+    sheets.server.ts  # Server-side Google Sheets fetcher with 1h cache, CSV parsing, fallback to menu.ts
   app.css             # All custom CSS: design tokens, component styles, responsive breakpoints
+public/
+  favicon.svg         # SVG favicon
+  about-us.jpeg       # About section image
 ```
 
 ## Design Language
@@ -40,7 +45,7 @@ app/
   - Body text: Libre Baskerville (serif, readable)
   - Chinese characters: Noto Serif SC
 - **Visual style:** Traditional Chinese restaurant aesthetic — ornamental gold lines, lantern SVGs, red stamp motif, sepia image filters, Ken Burns hero animation
-- **Layout:** Single-page with anchor navigation (`#meny`, `#om-oss`, `#hitta-hit`). Responsive with breakpoints at 640px and 1024px.
+- **Layout:** Single-page with anchor navigation (`#meny`, `#om-oss`, `#oppettider`, `#hitta-hit`). Responsive with breakpoints at 640px and 1024px.
 
 ## Key Commands
 
@@ -60,7 +65,8 @@ npm run format      # Auto-format with Biome
 ## Notes
 
 - SSR is enabled in `react-router.config.ts`
-- Menu data is served via a React Router loader (server-side), with all categories rendered hidden for SEO
+- Menu data is fetched from a public Google Sheets spreadsheet at runtime (server-side via `sheets.server.ts`), with 1-hour in-memory cache and fallback to static `menu.ts` data
 - Interactive components (`Nav`, `Menu`, `Carousel`) use `"use client"` / client-side `useState`
 - Structured data (JSON-LD schema.org Restaurant) is embedded in root.tsx
+- Opening hours are displayed in a dedicated `OpeningHours` section (separate from About)
 - External dependencies: Foodora for online ordering, Google Maps embed for location

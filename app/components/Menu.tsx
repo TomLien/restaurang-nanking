@@ -13,22 +13,13 @@ export default function Menu({ categories, defaultCategoryId }: Props) {
   const activeCategory = categories.find((c) => c.id === activeCategoryId) ?? categories[0];
 
   return (
-    <section
-      id="meny"
-      className="section-pad"
-      style={{ background: "var(--ink)" }}
-    >
+    <section id="meny" className="section-pad" style={{ background: "var(--ink)" }}>
       <div style={{ maxWidth: "64rem", margin: "0 auto" }}>
         {/* Section header */}
         <div style={{ textAlign: "center", marginBottom: "2.5rem" }}>
           <p className="section-label section-label-light">— 菜單 —</p>
-          <h2 className="section-title section-title-light">
-            Vår Meny
-            <span className="cn-sub">精選菜餚</span>
-          </h2>
-          <p className="menu-intro" style={{ marginTop: "1rem" }}>
-            Över 100 rätter — autentiska smaker från Kina
-          </p>
+          <h2 className="section-title section-title-light">Meny</h2>
+          <p className="menu-price-legend">Avhämtning / À la carte</p>
         </div>
 
         {/* Category tabs */}
@@ -82,7 +73,9 @@ export default function Menu({ categories, defaultCategoryId }: Props) {
                 <div className="menu-title">{item.title}</div>
                 <p className="menu-desc">{item.description}</p>
               </div>
-              <span className="menu-price">{item.price} kr</span>
+              <span className="menu-price">
+                {item.takeawayPrice} / {item.aLaCartePrice} kr
+              </span>
             </div>
           ))}
         </div>
@@ -99,7 +92,9 @@ export default function Menu({ categories, defaultCategoryId }: Props) {
                     <span>{item.number}</span>
                     <span>{item.title}</span>
                     <span>{item.description}</span>
-                    <span>{item.price} kr</span>
+                    <span>
+                      {item.takeawayPrice} / {item.aLaCartePrice} kr
+                    </span>
                   </div>
                 ))}
               </div>

@@ -45,25 +45,13 @@ export default function Hero() {
       />
 
       {/* Left decorative stripe + lantern */}
-      <div
-        aria-hidden="true"
-        className="hero-stripe"
-        style={{ left: "10%" }}
-      />
-      <div
-        aria-hidden="true"
-        className="hero-lantern"
-        style={{ left: "calc(10% - 11px)" }}
-      >
+      <div aria-hidden="true" className="hero-stripe" style={{ left: "10%" }} />
+      <div aria-hidden="true" className="hero-lantern" style={{ left: "calc(10% - 11px)" }}>
         <LanternSVG />
       </div>
 
       {/* Right decorative stripe + lantern */}
-      <div
-        aria-hidden="true"
-        className="hero-stripe"
-        style={{ right: "10%" }}
-      />
+      <div aria-hidden="true" className="hero-stripe" style={{ right: "10%" }} />
       <div
         aria-hidden="true"
         className="hero-lantern hero-lantern-right"
@@ -74,7 +62,7 @@ export default function Hero() {
 
       {/* Content */}
       <div className="hero-content">
-        <p className="hero-eyebrow">Äkta kinesisk mat sedan 1987</p>
+        <p className="hero-eyebrow"></p>
 
         <h1 className="hero-name">Restaurang Nanking</h1>
 
@@ -86,7 +74,11 @@ export default function Hero() {
           <span />
         </div>
 
-        <p className="hero-tagline">Välkommen till hjärtat av Göteborg</p>
+        <div className="hero-taglines">
+          <p className="hero-tagline">Äkta kinesisk mat sedan 1987 </p>
+          <p className="hero-tagline">i Göteborg</p>
+        </div>
+
 
         <div
           style={{
@@ -114,6 +106,8 @@ export default function Hero() {
           fill="none"
           stroke="rgba(201,147,58,0.7)"
           strokeWidth="1.5"
+          role="img"
+          aria-label="Scrolla ner"
         >
           <path d="M1 1l5 5 5-5" />
         </svg>

@@ -1,18 +1,11 @@
 export default function Location() {
   return (
-    <section
-      id="hitta-hit"
-      className="section-pad"
-      style={{ background: "var(--ink)" }}
-    >
+    <section id="hitta-hit" className="section-pad" style={{ background: "var(--paper-warm)" }}>
       <div style={{ maxWidth: "64rem", margin: "0 auto" }}>
         {/* Section header */}
         <div style={{ textAlign: "center", marginBottom: "3rem" }}>
-          <p className="section-label section-label-light">— 位置 —</p>
-          <h2 className="section-title section-title-light">
-            Hitta hit
-            <span className="cn-sub">聯絡我們</span>
-          </h2>
+          <p className="section-label">— 位置 —</p>
+          <h2 className="section-title">Hitta hit</h2>
         </div>
 
         <div
@@ -50,7 +43,9 @@ export default function Location() {
               <div>
                 <p className="loc-label">Adress</p>
                 <p className="loc-value">
-                  Lantmätaregatan 12<br />417 06 Göteborg
+                  Lantmätaregatan 12
+                  <br />
+                  417 06 Göteborg
                 </p>
               </div>
             </div>
@@ -96,9 +91,7 @@ export default function Location() {
               <div>
                 <p className="loc-label">E-post</p>
                 <p className="loc-value">
-                  <a href="mailto:info@restaurangnanking.se">
-                    info@restaurangnanking.se
-                  </a>
+                  <a href="mailto:info@restaurangnanking.se">info@restaurangnanking.se</a>
                 </p>
               </div>
             </div>
@@ -109,7 +102,7 @@ export default function Location() {
             <div className="map-overlay-label">Göteborg, Sverige</div>
             <iframe
               title="Karta över Restaurang Nanking"
-              src="https://www.google.com/maps?q=Lantm%C3%A4taregatan+12,+417+06+G%C3%B6teborg,+Sverige&output=embed"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2130.6681596748485!2d11.9420144!3d57.7220943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464ff4a8d7fb1641%3A0xccfc04f35d594ef!2sRestaurang%20Nanking!5e0!3m2!1ssv!2sse!4v1772919511032!5m2!1ssv!2sse"
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

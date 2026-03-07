@@ -12,7 +12,8 @@ const slides: CarouselSlide[] = [
     imageUrl:
       "https://images.unsplash.com/photo-1585032226651-759b368d7246?q=80&w=1384&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     title: "Dagens Lunch 135:-",
-    description: "Välj fritt från lunchmenyn mellan kyckling, biff, fläsk & vegetariska rätter. Inklusive sallad, valfri dryck & kaffe. Avhämtning 120:- (exklusive dricka & sallad).",
+    description:
+      "Välj fritt från lunchmenyn mellan kyckling, biff, fläsk & vegetariska rätter. Inklusive sallad, valfri dryck & kaffe. Avhämtning 120:- (exklusive dricka & sallad).",
     tag: "Erbjudande",
   },
   {
@@ -43,7 +44,7 @@ export default function Carousel() {
     return () => {
       if (timerRef.current) clearTimeout(timerRef.current);
     };
-  }, [current, resetTimer]);
+  }, [resetTimer]);
 
   function prev() {
     setCurrent((i) => (i - 1 + items.length) % items.length);
@@ -69,10 +70,9 @@ export default function Carousel() {
       >
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: "1.8rem" }}>
+          <p className="section-label">— 当前的 —</p>
           <p className="section-label section-label-light">Aktuellt</p>
-          <h2 className="section-title">
-            Erbjudanden &amp; Nyheter
-          </h2>
+          <h2 className="section-title">Erbjudanden &amp; Nyheter</h2>
         </div>
 
         {/* Slide area */}
@@ -171,7 +171,17 @@ export default function Carousel() {
             style={{ left: "0.6rem" }}
             aria-label="Föregående bild"
           >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
               <polyline points="15 18 9 12 15 6" />
             </svg>
           </button>
@@ -184,7 +194,17 @@ export default function Carousel() {
             style={{ right: "0.6rem" }}
             aria-label="Nästa bild"
           >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
               <polyline points="9 18 15 12 9 6" />
             </svg>
           </button>

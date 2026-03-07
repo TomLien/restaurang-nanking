@@ -20,54 +20,45 @@ export default function Nav() {
   return (
     <>
       <nav className="nav-bar">
-        <a href="#" className="nav-logo" aria-label="Restaurang Nanking">
+        <a href="/" className="nav-logo" aria-label="Restaurang Nanking">
           <span className="nav-logo-cn">南京故店</span>
           <span className="nav-logo-en">Restaurang Nanking</span>
         </a>
 
         <div className="nav-desktop-links">
-          <a href="#meny" className="nav-desktop-link">Meny</a>
-          <a href="#om-oss" className="nav-desktop-link">Om oss</a>
-          <a href="#hitta-hit" className="nav-desktop-link">Hitta hit</a>
-        </div>
-
-        <div className="nav-right">
-          <a
-            href="https://www.foodora.se/restaurant/b7ae/restaurang-nanking"
-            className="btn-lacquer nav-reserve-desktop"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Beställ
+          <a href="#meny" className="nav-desktop-link">
+            Meny
           </a>
-          <button
-            type="button"
-            className={`nav-hamburger${open ? " open" : ""}`}
-            onClick={toggle}
-            aria-label={open ? "Stäng meny" : "Öppna meny"}
-            aria-expanded={open}
-          >
-            <span />
-            <span />
-            <span />
-          </button>
+          <a href="#om-oss" className="nav-desktop-link">
+            Om oss
+          </a>
+          <a href="#oppettider" className="nav-desktop-link">
+            Öppettider
+          </a>
+          <a href="#hitta-hit" className="nav-desktop-link">
+            Hitta hit
+          </a>
         </div>
       </nav>
 
       <div className={`nav-drawer${open ? " open" : ""}`} aria-hidden={!open}>
-        <a href="#meny" className="nav-drawer-link" onClick={close}>Meny</a>
-        <a href="#om-oss" className="nav-drawer-link" onClick={close}>Om oss</a>
-        <a href="#hitta-hit" className="nav-drawer-link" onClick={close}>Hitta hit</a>
-        <a
-          href="https://www.foodora.se/restaurant/b7ae/restaurang-nanking"
-          className="btn-lacquer"
-          onClick={close}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ marginTop: "0.8rem" }}
-        >
-          Beställ
+        {/* biome-ignore lint/a11y/useValidAnchor: hash navigation link that also closes drawer */}
+        <a href="#meny" className="nav-drawer-link" onClick={close}>
+          Meny
         </a>
+        {/* biome-ignore lint/a11y/useValidAnchor: hash navigation link that also closes drawer */}
+        <a href="#om-oss" className="nav-drawer-link" onClick={close}>
+          Om oss
+        </a>
+        {/* biome-ignore lint/a11y/useValidAnchor: hash navigation link that also closes drawer */}
+        <a href="#oppettider" className="nav-drawer-link" onClick={close}>
+          Öppettider
+        </a>
+        {/* biome-ignore lint/a11y/useValidAnchor: hash navigation link that also closes drawer */}
+        <a href="#hitta-hit" className="nav-drawer-link" onClick={close}>
+          Hitta hit
+        </a>
+        {/* biome-ignore lint/a11y/useValidAnchor: hash navigation link that also closes drawer */}
         <a
           href="#hitta-hit"
           className="btn-lacquer"
