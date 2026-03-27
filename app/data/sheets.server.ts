@@ -95,7 +95,8 @@ function rowToMenuItem(row: Record<string, string>): MenuItem | null {
   const description = row.description;
   if (!title || Number.isNaN(number) || Number.isNaN(takeawayPrice) || Number.isNaN(aLaCartePrice))
     return null;
-  return { number, title, description: description ?? "", takeawayPrice, aLaCartePrice };
+  const heat = Number(row.heat) || 0;
+  return { number, title, description: description ?? "", takeawayPrice, aLaCartePrice, heat };
 }
 
 async function fetchAllCategories(spreadsheetId: string): Promise<MenuCategory[]> {

@@ -20,10 +20,34 @@ export default function Menu({ categories, defaultCategoryId }: Props) {
           <p className="section-label section-label-light">— 菜單 —</p>
           <h2 className="section-title section-title-light">Meny</h2>
           <p className="menu-price-legend">Avhämtning / À la carte</p>
+          {/* <div className="menu-heat-legend">
+            {[
+              { level: 1, label: "Lite stark" },
+              { level: 2, label: "Mellanstark" },
+              { level: 3, label: "Mycket stark" },
+            ].map(({ level, label }) => (
+              <span key={level} className="menu-heat-legend-item">
+                {Array.from({ length: level }, (_, i) => (
+                  <svg
+                    key={i}
+                    className="menu-heat-icon"
+                    viewBox="0 0 1024 1024"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d="M161.597 850.945c120.85 24.006 216.772 10.323 272.34-2.196 46.539-10.488 284.518-69.271 386.371-273.361 22.555-45.201 62.66-125.529 29.375-202.718-39.863-92.386-151.961-113.417-163.063-115.306-22.577-3.844-102.128-13.87-163.986 33.175-81.68 62.166-54.127 164.468-97.088 283.167-28.661 79.187-94.836 182.732-263.949 277.237z" /><path d="M587.072 245.859c-10.686 26.356 34.219 74.092 79.703 97.098 64.219 32.494 149.897 25.851 161.043-3.547 10.828-28.552-58.201-53.545-55.554-111.682 1.911-42.684 40.335-63.637 29.386-101.545-3.909-13.573-14.935-31.165-26.861-31.023-24.248 0.297-19.92 69.71-68.415 109.507-49.010 40.225-108.166 13.771-119.302 41.192z" />
+                  </svg>
+                ))}
+                {" "}= {label}
+              </span>
+            ))}
+          </div> */}
+          <p className="section-title-light" style={{ paddingTop: "3rem" }}>Menyn är för tillfället under konstruktion, återkommer inom kort!</p>
         </div>
 
+
         {/* Category tabs */}
-        <nav aria-label="Menykategorier" style={{ marginBottom: "2.5rem" }}>
+        {/* <nav aria-label="Menykategorier" style={{ marginBottom: "2.5rem" }}>
           <ul
             style={{
               display: "flex",
@@ -52,10 +76,10 @@ export default function Menu({ categories, defaultCategoryId }: Props) {
               </li>
             ))}
           </ul>
-        </nav>
+        </nav> */}
 
         {/* Menu items grid */}
-        <div
+        {/* <div
           id={`panel-${activeCategory.id}`}
           role="tabpanel"
           aria-labelledby={`tab-${activeCategory.id}`}
@@ -70,7 +94,25 @@ export default function Menu({ categories, defaultCategoryId }: Props) {
             <div key={item.number} className="menu-item">
               <span className="menu-num">{String(item.number).padStart(2, "0")}</span>
               <div>
-                <div className="menu-title">{item.title}</div>
+                <div className="menu-title">
+                  {item.title}
+                  {item.heat > 0 && (
+                    <span className="menu-heat" aria-label={`Styrka ${item.heat} av 3`}>
+                      {Array.from({ length: item.heat }, (_, i) => (
+                        // biome-ignore lint/suspicious/noArrayIndexKey: static identical icons, no reordering
+                        <svg
+                          key={i}
+                          className="menu-heat-icon"
+                          viewBox="0 0 1024 1024"
+                          fill="currentColor"
+                          aria-hidden="true"
+                        >
+                          <path d="M161.597 850.945c120.85 24.006 216.772 10.323 272.34-2.196 46.539-10.488 284.518-69.271 386.371-273.361 22.555-45.201 62.66-125.529 29.375-202.718-39.863-92.386-151.961-113.417-163.063-115.306-22.577-3.844-102.128-13.87-163.986 33.175-81.68 62.166-54.127 164.468-97.088 283.167-28.661 79.187-94.836 182.732-263.949 277.237z" /><path d="M587.072 245.859c-10.686 26.356 34.219 74.092 79.703 97.098 64.219 32.494 149.897 25.851 161.043-3.547 10.828-28.552-58.201-53.545-55.554-111.682 1.911-42.684 40.335-63.637 29.386-101.545-3.909-13.573-14.935-31.165-26.861-31.023-24.248 0.297-19.92 69.71-68.415 109.507-49.010 40.225-108.166 13.771-119.302 41.192z" />
+                        </svg>
+                      ))}
+                    </span>
+                  )}
+                </div>
                 <p className="menu-desc">{item.description}</p>
               </div>
               <span className="menu-price">
@@ -78,7 +120,7 @@ export default function Menu({ categories, defaultCategoryId }: Props) {
               </span>
             </div>
           ))}
-        </div>
+        </div> */}
 
         {/* SSR fallback for SEO */}
         <div className="sr-only" aria-hidden="true">

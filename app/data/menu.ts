@@ -4,6 +4,7 @@ export type MenuItem = {
   description: string;
   takeawayPrice: number;
   aLaCartePrice: number;
+  heat: number;
 };
 
 export type MenuCategory = {
@@ -23,6 +24,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Krispig vårrulle fylld med grönsaker och glasnudlar, serveras med sötsurkräm",
         takeawayPrice: 89,
         aLaCartePrice: 89,
+        heat: 0,
       },
       {
         number: 2,
@@ -30,6 +32,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Ångkokta dumplings med tiger räkor, ingefära och salladslök",
         takeawayPrice: 115,
         aLaCartePrice: 115,
+        heat: 0,
       },
       {
         number: 3,
@@ -37,6 +40,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Klassisk Peking-and med tunna pannkakor, hoisinsås, gurka och vårlök",
         takeawayPrice: 145,
         aLaCartePrice: 145,
+        heat: 0,
       },
       {
         number: 4,
@@ -44,6 +48,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Friterat bröd toppat med räkfärs och sesamfrön, serveras med sötsursås",
         takeawayPrice: 95,
         aLaCartePrice: 95,
+        heat: 0,
       },
       {
         number: 5,
@@ -51,6 +56,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Ångkokta edamamebönor med flingsalt och chili",
         takeawayPrice: 69,
         aLaCartePrice: 69,
+        heat: 0,
       },
       {
         number: 6,
@@ -58,6 +64,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Strimlad kyckling med glasnudlar, koriander, jordnötter och sesamdressing",
         takeawayPrice: 105,
         aLaCartePrice: 105,
+        heat: 0,
       },
       {
         number: 7,
@@ -65,6 +72,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Pankokta dumplings med fläsk och kål, serveras med dippsås",
         takeawayPrice: 99,
         aLaCartePrice: 99,
+        heat: 0,
       },
       {
         number: 8,
@@ -72,6 +80,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Krispiga wontons fyllda med räk och fläskfärs, serveras med plomonsås",
         takeawayPrice: 99,
         aLaCartePrice: 99,
+        heat: 0,
       },
     ],
   },
@@ -85,6 +94,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Kryddig thaisoppa med räkor, citrongräs, lime och galangal",
         takeawayPrice: 129,
         aLaCartePrice: 129,
+        heat: 0,
       },
       {
         number: 21,
@@ -92,6 +102,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Klar kycklingbuljong med räk-wontons, pak choi och sesamolja",
         takeawayPrice: 115,
         aLaCartePrice: 115,
+        heat: 0,
       },
       {
         number: 22,
@@ -99,6 +110,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Traditionell het och syrlig soppa med tofu, bambu och svamp",
         takeawayPrice: 109,
         aLaCartePrice: 109,
+        heat: 0,
       },
       {
         number: 23,
@@ -106,6 +118,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Len misosoppa med tiger räkor, wakame och tofu",
         takeawayPrice: 119,
         aLaCartePrice: 119,
+        heat: 0,
       },
       {
         number: 24,
@@ -113,6 +126,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Kokosmjölksbaserad nudelsoppa med kyckling, böngroddor och basilika",
         takeawayPrice: 139,
         aLaCartePrice: 139,
+        heat: 0,
       },
       {
         number: 25,
@@ -120,6 +134,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Rikbuljong med handdragna nudlar, fläsk och syltad salladslök",
         takeawayPrice: 125,
         aLaCartePrice: 125,
+        heat: 0,
       },
     ],
   },
@@ -133,6 +148,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Krispig kyckling i sötstark sås med torkad chili och sesamfrön",
         takeawayPrice: 175,
         aLaCartePrice: 175,
+        heat: 0,
       },
       {
         number: 41,
@@ -140,6 +156,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Wokad kyckling med cashewnötter, paprika och sichuanpeppar",
         takeawayPrice: 169,
         aLaCartePrice: 169,
+        heat: 0,
       },
       {
         number: 42,
@@ -147,6 +164,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Panerad kyckling i syrlig lemonsås med färsk ingefära",
         takeawayPrice: 165,
         aLaCartePrice: 165,
+        heat: 0,
       },
       {
         number: 43,
@@ -154,6 +172,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Mört kycklingbröst wokat med broccoli, pak choi och hoisinsås",
         takeawayPrice: 169,
         aLaCartePrice: 169,
+        heat: 0,
       },
       {
         number: 44,
@@ -161,6 +180,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Kryddig kyckling med sichuanpeppar, vitlök, ingefära och grön paprika",
         takeawayPrice: 179,
         aLaCartePrice: 179,
+        heat: 0,
       },
       {
         number: 45,
@@ -168,6 +188,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Wokad kycklingfilé med cashewnötter, paprika och ostronsås",
         takeawayPrice: 172,
         aLaCartePrice: 172,
+        heat: 0,
       },
       {
         number: 46,
@@ -175,6 +196,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Kycklingbröst med shitake- och ostronsvamp i lätt sojasås",
         takeawayPrice: 168,
         aLaCartePrice: 168,
+        heat: 0,
       },
     ],
   },
@@ -188,6 +210,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Klassisk sötsurfläsk med ananas, paprika och lök i röd sötsursås",
         takeawayPrice: 169,
         aLaCartePrice: 169,
+        heat: 0,
       },
       {
         number: 56,
@@ -195,6 +218,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Kantonesiskt grillat fläsk marinerat i honung, sojasås och fem-kryddor",
         takeawayPrice: 179,
         aLaCartePrice: 179,
+        heat: 0,
       },
       {
         number: 57,
@@ -202,6 +226,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Mjuk tofu med fläskfärs i het sichuansås med bönpasta",
         takeawayPrice: 165,
         aLaCartePrice: 165,
+        heat: 0,
       },
       {
         number: 58,
@@ -209,6 +234,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Strimlat fläsk med ägg, svamp och kål, serveras med tunna pannkakor",
         takeawayPrice: 172,
         aLaCartePrice: 172,
+        heat: 0,
       },
       {
         number: 59,
@@ -216,6 +242,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Mört fläsk wokat med paprika och lök i klassisk svartbönssås",
         takeawayPrice: 169,
         aLaCartePrice: 169,
+        heat: 0,
       },
       {
         number: 60,
@@ -223,6 +250,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Kinesiskt ångkokt sidfläsk med hasselnötsbryn sojasås och bok choy",
         takeawayPrice: 189,
         aLaCartePrice: 189,
+        heat: 0,
       },
     ],
   },
@@ -236,6 +264,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Möra nötköttstrimlor wokade med lök och salladslök i söt sojasås",
         takeawayPrice: 189,
         aLaCartePrice: 189,
+        heat: 0,
       },
       {
         number: 71,
@@ -243,6 +272,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Klassisk kantonesisk biff och broccoli i ostronsås",
         takeawayPrice: 185,
         aLaCartePrice: 185,
+        heat: 0,
       },
       {
         number: 72,
@@ -250,6 +280,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Kryddig nötköttswok med sichuanpeppar, chili och grön paprika",
         takeawayPrice: 195,
         aLaCartePrice: 195,
+        heat: 0,
       },
       {
         number: 73,
@@ -257,6 +288,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Saftig biff med grovmalen svartpeppar, lök och paprika",
         takeawayPrice: 199,
         aLaCartePrice: 199,
+        heat: 0,
       },
       {
         number: 74,
@@ -264,6 +296,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Mört nötkött wokat med ostron- och shitakesvamp i ostronsås",
         takeawayPrice: 192,
         aLaCartePrice: 192,
+        heat: 0,
       },
       {
         number: 75,
@@ -271,6 +304,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Krispig biff i sötstark mandarin-apelsinsås med torkad chili",
         takeawayPrice: 195,
         aLaCartePrice: 195,
+        heat: 0,
       },
     ],
   },
@@ -284,6 +318,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Jumboräkor wokade med vitlök, ingefära och grönsaker i ostronsås",
         takeawayPrice: 199,
         aLaCartePrice: 199,
+        heat: 0,
       },
       {
         number: 86,
@@ -291,6 +326,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Hel ångad fisk med ingefära, salladslök och lätt sojasås",
         takeawayPrice: 225,
         aLaCartePrice: 225,
+        heat: 0,
       },
       {
         number: 87,
@@ -298,6 +334,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Kryddiga räkor med cashewnötter, paprika och sichuanpeppar",
         takeawayPrice: 205,
         aLaCartePrice: 205,
+        heat: 0,
       },
       {
         number: 88,
@@ -305,6 +342,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Stir-fry krabba med färsk ingefära, salladslök och sojasås",
         takeawayPrice: 245,
         aLaCartePrice: 245,
+        heat: 0,
       },
       {
         number: 89,
@@ -312,6 +350,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Räkor i krämig kokosmjölkssås med citrongräs och kaffirlimeblad",
         takeawayPrice: 209,
         aLaCartePrice: 209,
+        heat: 0,
       },
       {
         number: 90,
@@ -319,6 +358,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Krispig torskfilé med sötstark sås och wokade pak choi",
         takeawayPrice: 195,
         aLaCartePrice: 195,
+        heat: 0,
       },
       {
         number: 91,
@@ -326,6 +366,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Kryddig havskattsfilé med sichuanbönpasta, doubanjiang och sesamolja",
         takeawayPrice: 215,
         aLaCartePrice: 215,
+        heat: 0,
       },
     ],
   },
@@ -339,6 +380,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Mjuk tofu i het sichuansås med doubanjiang och sesamolja (vegansk)",
         takeawayPrice: 155,
         aLaCartePrice: 155,
+        heat: 0,
       },
       {
         number: 101,
@@ -346,6 +388,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Pak choi med vitlök och ostronsås (kan göras vegansk)",
         takeawayPrice: 139,
         aLaCartePrice: 139,
+        heat: 0,
       },
       {
         number: 102,
@@ -353,6 +396,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Blandade grönsaker och tofu wokat med hoisinsås och sesamfrön (vegansk)",
         takeawayPrice: 159,
         aLaCartePrice: 159,
+        heat: 0,
       },
       {
         number: 103,
@@ -360,6 +404,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Shitake, ostron- och enokisvamp i svartbönssås med ingefära",
         takeawayPrice: 149,
         aLaCartePrice: 149,
+        heat: 0,
       },
       {
         number: 104,
@@ -367,6 +412,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Stekt tofu med cashewnötter, paprika och sichuanpeppar (vegansk)",
         takeawayPrice: 155,
         aLaCartePrice: 155,
+        heat: 0,
       },
       {
         number: 105,
@@ -374,6 +420,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Ångkokta dumplings med edamame, tofu och svamp (vegansk)",
         takeawayPrice: 139,
         aLaCartePrice: 139,
+        heat: 0,
       },
       {
         number: 106,
@@ -381,6 +428,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Mjuk aubergine i het chilisås med vitlök och sesamolja (vegansk)",
         takeawayPrice: 149,
         aLaCartePrice: 149,
+        heat: 0,
       },
     ],
   },
@@ -394,6 +442,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Klassiskt kantonesiskt stekt ris med räkor, kyckling, ägg och grönsaker",
         takeawayPrice: 149,
         aLaCartePrice: 149,
+        heat: 0,
       },
       {
         number: 116,
@@ -401,6 +450,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Risnudlar med räkor, tofu, ägg, böngroddor och jordnötter",
         takeawayPrice: 159,
         aLaCartePrice: 159,
+        heat: 0,
       },
       {
         number: 117,
@@ -408,6 +458,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Mjuka äggdudlar wokade med kyckling, svamp och grönsaker",
         takeawayPrice: 155,
         aLaCartePrice: 155,
+        heat: 0,
       },
       {
         number: 118,
@@ -415,6 +466,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Tunna risnudlar med räkor, fläsk, ägg och currykryddor",
         takeawayPrice: 159,
         aLaCartePrice: 159,
+        heat: 0,
       },
       {
         number: 119,
@@ -422,6 +474,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Wokat jasminris med tofu, grönsaker, ägg och sojasås (kan göras vegansk)",
         takeawayPrice: 139,
         aLaCartePrice: 139,
+        heat: 0,
       },
       {
         number: 120,
@@ -429,6 +482,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Sichuanska nudlar med fläskfärs, tahini, chiliolja och salladslök",
         takeawayPrice: 149,
         aLaCartePrice: 149,
+        heat: 0,
       },
       {
         number: 121,
@@ -436,6 +490,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Wokade breda risnudlar med biff, böngroddor och sojasås",
         takeawayPrice: 165,
         aLaCartePrice: 165,
+        heat: 0,
       },
       {
         number: 122,
@@ -443,6 +498,7 @@ export const menuCategories: MenuCategory[] = [
         description: "Ångat jasminris kokt i kokosmjölk (vegansk, sidorätt)",
         takeawayPrice: 49,
         aLaCartePrice: 49,
+        heat: 0,
       },
     ],
   },

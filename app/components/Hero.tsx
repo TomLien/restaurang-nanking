@@ -29,7 +29,7 @@ export default function Hero() {
         aria-hidden="true"
         style={{
           backgroundImage:
-            "url(https://cdn.pixabay.com/photo/2019/06/11/04/00/radish-4266000_1280.jpg",
+            "url(/hero-image.jpg)",
         }}
       />
 

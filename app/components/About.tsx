@@ -20,7 +20,7 @@ export default function About() {
           {/* Image column */}
           <div className="about-img-wrap">
             <img
-              src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=900"
+              src="/food.webp"
               alt="Restaurang Nanking interiör"
               width={900}
               height={600}
