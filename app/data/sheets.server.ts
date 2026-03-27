@@ -88,13 +88,12 @@ async function fetchSheetTab(
 }
 
 function rowToMenuItem(row: Record<string, string>): MenuItem | null {
-  const number = Number(row.number);
+  const number = row.number;
   const takeawayPrice = Number(row.takeawayPrice);
   const aLaCartePrice = Number(row.aLaCartePrice);
   const title = row.title;
   const description = row.description;
-  if (!title || Number.isNaN(number) || Number.isNaN(takeawayPrice) || Number.isNaN(aLaCartePrice))
-    return null;
+  if (!title || !number || Number.isNaN(takeawayPrice) || Number.isNaN(aLaCartePrice)) return null;
   const heat = Number(row.heat) || 0;
   return { number, title, description: description ?? "", takeawayPrice, aLaCartePrice, heat };
 }
