@@ -20,7 +20,7 @@ export default function Menu({ categories, defaultCategoryId }: Props) {
           <p className="section-label section-label-light">— 菜單 —</p>
           <h2 className="section-title section-title-light">Meny</h2>
           <p className="menu-price-legend">Avhämtning / À la carte</p>
-          {/* <div className="menu-heat-legend">
+          <div className="menu-heat-legend">
             {[
               { level: 1, label: "Lite stark" },
               { level: 2, label: "Mellanstark" },
@@ -41,13 +41,12 @@ export default function Menu({ categories, defaultCategoryId }: Props) {
                 {" "}= {label}
               </span>
             ))}
-          </div> */}
-          <p className="section-title-light" style={{ paddingTop: "3rem" }}>Menyn är för tillfället under konstruktion, återkommer inom kort!</p>
+          </div>
         </div>
 
 
         {/* Category tabs */}
-        {/* <nav aria-label="Menykategorier" style={{ marginBottom: "2.5rem" }}>
+        <nav aria-label="Menykategorier" style={{ marginBottom: "2.5rem" }}>
           <ul
             style={{
               display: "flex",
@@ -76,10 +75,10 @@ export default function Menu({ categories, defaultCategoryId }: Props) {
               </li>
             ))}
           </ul>
-        </nav> */}
+        </nav>
 
         {/* Menu items grid */}
-        {/* <div
+        <div
           id={`panel-${activeCategory.id}`}
           role="tabpanel"
           aria-labelledby={`tab-${activeCategory.id}`}
@@ -120,7 +119,7 @@ export default function Menu({ categories, defaultCategoryId }: Props) {
               </span>
             </div>
           ))}
-        </div> */}
+        </div>
 
         {/* SSR fallback for SEO */}
         <div className="sr-only" aria-hidden="true">
