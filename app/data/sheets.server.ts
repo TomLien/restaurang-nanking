@@ -3,10 +3,7 @@ import { menuCategories as fallbackMenu } from "./menu";
 
 type SheetTab = { gid: string; name: string };
 
-const CACHE_TTL = 3600000;
-
 let cachedMenu: MenuCategory[] | null = null;
-let cacheTimestamp = 0;
 
 function labelToId(label: string): string {
   return label
@@ -89,13 +86,20 @@ async function fetchSheetTab(
 
 function rowToMenuItem(row: Record<string, string>): MenuItem | null {
   const number = row.number;
-  const takeawayPrice = Number(row.takeawayPrice);
-  const aLaCartePrice = Number(row.aLaCartePrice);
+  const takeawayPrice = row.takeawayPrice?.trim();
+  const aLaCartePrice = row.aLaCartePrice?.trim();
   const title = row.title;
   const description = row.description;
-  if (!title || !number || Number.isNaN(takeawayPrice) || Number.isNaN(aLaCartePrice)) return null;
+  if (!title || !takeawayPrice || !aLaCartePrice) return null;
   const heat = Number(row.heat) || 0;
-  return { number, title, description: description ?? "", takeawayPrice, aLaCartePrice, heat };
+  return {
+    ...(number ? { number } : {}),
+    title,
+    description: description ?? "",
+    takeawayPrice,
+    aLaCartePrice,
+    heat,
+  };
 }
 
 async function fetchAllCategories(spreadsheetId: string): Promise<MenuCategory[]> {
@@ -113,15 +117,8 @@ async function fetchAllCategories(spreadsheetId: string): Promise<MenuCategory[]
 export async function getMenuCategories(): Promise<MenuCategory[]> {
   const sheetId = "1CBpbWHcQZR7IoQoTaVWzrPWh2XH6knHTCBH712xo9Fg";
 
-  const now = Date.now();
-  if (cachedMenu && now - cacheTimestamp < CACHE_TTL) {
-    return cachedMenu;
-  }
-
   try {
     const categories = await fetchAllCategories(sheetId);
-    cachedMenu = categories;
-    cacheTimestamp = now;
     return categories;
   } catch (error) {
     console.error("Failed to fetch menu from Google Sheets, using fallback:", error);

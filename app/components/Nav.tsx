@@ -21,7 +21,7 @@ export default function Nav() {
     <>
       <nav className="nav-bar">
         <a href="/" className="nav-logo" aria-label="Restaurang Nanking">
-          <span className="nav-logo-cn">南京故店</span>
+          <span className="nav-logo-cn">南京饭店</span>
           <span className="nav-logo-en">Restaurang Nanking</span>
         </a>
 
