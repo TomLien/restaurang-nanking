@@ -649,6 +649,40 @@ body {
   margin-top: 0.5rem;
 }
 
+.menu-price-toggle {
+  display: inline-flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.menu-price-toggle-btn {
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.45rem 1.2rem;
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid rgba(201, 147, 58, 0.25);
+  background: transparent;
+  color: rgba(245, 239, 228, 0.7);
+  transition: color 0.2s, background 0.2s, border-color 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.menu-price-toggle-btn.active {
+  color: var(--ink);
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+.menu-price-toggle-btn:hover:not(.active) {
+  color: var(--gold);
+  border-color: rgba(201, 147, 58, 0.45);
+}
+
 .menu-price-col {
   display: flex;
   flex-direction: column;
@@ -669,6 +703,7 @@ body {
 .about-img-wrap {
   position: relative;
   overflow: visible;
+  width: fit-content;
 }
 
 .about-img-wrap::before {
@@ -683,10 +718,10 @@ body {
 .about-img-wrap img {
   position: relative;
   z-index: 1;
-  width: 100%;
+  max-width: 100%;
   height: auto;
   display: block;
-  filter: sepia(12%) contrast(1.04);
+  filter: none;
 }
 
 .about-cn-stamp {

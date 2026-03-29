@@ -3,22 +3,22 @@
 import { useRef, useState } from "react";
 import type { MenuCategory } from "~/data/menu";
 
+type PriceMode = "takeaway" | "alaCarte";
+
 type Props = {
   categories: MenuCategory[];
   defaultCategoryId: string;
 };
 
-function formatPrice(takeaway: string, alaCarte: string) {
-  const t = takeaway && takeaway !== "0";
-  const a = alaCarte && alaCarte !== "0";
-  if (t && a) return `${takeaway} / ${alaCarte} kr`;
-  if (t) return `${takeaway} kr`;
-  if (a) return `${alaCarte} kr`;
+function formatPrice(takeaway: string, alaCarte: string, mode: PriceMode) {
+  const price = mode === "takeaway" ? takeaway : alaCarte;
+  if (price && price !== "0") return `${price} kr`;
   return "";
 }
 
 export default function Menu({ categories, defaultCategoryId }: Props) {
   const [activeCategoryId, setActiveCategoryId] = useState(defaultCategoryId);
+  const [priceMode, setPriceMode] = useState<PriceMode>("takeaway");
   const activeCategory = categories.find((c) => c.id === activeCategoryId) ?? categories[0];
   const menuGridRef = useRef<HTMLDivElement>(null);
 
@@ -56,7 +56,8 @@ export default function Menu({ categories, defaultCategoryId }: Props) {
                     setActiveCategoryId(category.id);
                     const el = menuGridRef.current;
                     if (el) {
-                      const navHeight = document.querySelector("nav")?.getBoundingClientRect().height ?? 0;
+                      const navHeight =
+                        document.querySelector("nav")?.getBoundingClientRect().height ?? 0;
                       const top = el.getBoundingClientRect().top + window.scrollY - navHeight;
                       window.scrollTo({ top, behavior: "smooth" });
                     }
@@ -70,7 +71,22 @@ export default function Menu({ categories, defaultCategoryId }: Props) {
           </ul>
         </nav>
         <div ref={menuGridRef} style={{ textAlign: "center", marginBottom: "2.5rem" }}>
-          <p className="menu-price-legend">Avhämtning / À la carte priser</p>
+          <div className="menu-price-toggle">
+            <button
+              type="button"
+              className={`menu-price-toggle-btn${priceMode === "takeaway" ? " active" : ""}`}
+              onClick={() => setPriceMode("takeaway")}
+            >
+              Avhämtning
+            </button>
+            <button
+              type="button"
+              className={`menu-price-toggle-btn${priceMode === "alaCarte" ? " active" : ""}`}
+              onClick={() => setPriceMode("alaCarte")}
+            >
+              À la carte
+            </button>
+          </div>
           <div className="menu-heat-legend">
             {[
               { level: 1, label: "Lite stark" },
@@ -79,9 +95,15 @@ export default function Menu({ categories, defaultCategoryId }: Props) {
             ].map(({ level, label }) => (
               <span key={level} className="menu-heat-legend-item">
                 {Array.from({ length: level }, (_, i) => (
-                  <img key={i} src="/chili-icon.svg" alt="" className="menu-heat-icon" aria-hidden="true" />
-                ))}
-                {" "}= {label}
+                  <img
+                    key={i}
+                    src="/chili-icon.svg"
+                    alt=""
+                    className="menu-heat-icon"
+                    aria-hidden="true"
+                  />
+                ))}{" "}
+                = {label}
               </span>
             ))}
           </div>
@@ -99,7 +121,12 @@ export default function Menu({ categories, defaultCategoryId }: Props) {
           }}
           className="menu-grid"
         >
-          {activeCategory.items.map((item, index) => (
+          {activeCategory.items
+            .filter((item) => {
+              const price = priceMode === "takeaway" ? item.takeawayPrice : item.aLaCartePrice;
+              return price && price !== "0";
+            })
+            .map((item, index) => (
             <div key={item.number ?? `item-${index}`} className="menu-item">
               {item.number && <span className="menu-num">{item.number}</span>}
               <div>
@@ -108,12 +135,18 @@ export default function Menu({ categories, defaultCategoryId }: Props) {
               </div>
               <div className="menu-price-col">
                 <span className="menu-price">
-                  {formatPrice(item.takeawayPrice, item.aLaCartePrice)}
+                  {formatPrice(item.takeawayPrice, item.aLaCartePrice, priceMode)}
                 </span>
                 {item.heat > 0 && (
                   <span className="menu-heat" aria-label={`Styrka ${item.heat} av 3`}>
                     {Array.from({ length: item.heat }, (_, i) => (
-                      <img key={i} src="/chili-icon.svg" alt="" className="menu-heat-icon" aria-hidden="true" />
+                      <img
+                        key={i}
+                        src="/chili-icon.svg"
+                        alt=""
+                        className="menu-heat-icon"
+                        aria-hidden="true"
+                      />
                     ))}
                   </span>
                 )}
@@ -134,9 +167,7 @@ export default function Menu({ categories, defaultCategoryId }: Props) {
                     {item.number && <span>{item.number}</span>}
                     <span>{item.title}</span>
                     <span>{item.description}</span>
-                    <span>
-                      {formatPrice(item.takeawayPrice, item.aLaCartePrice)}
-                    </span>
+                    <span>{formatPrice(item.takeawayPrice, item.aLaCartePrice, priceMode)}</span>
                   </div>
                 ))}
               </div>

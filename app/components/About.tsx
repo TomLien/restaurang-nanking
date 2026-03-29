@@ -20,20 +20,16 @@ export default function About() {
           {/* Image column */}
           <div className="about-img-wrap">
             <img
-              src="/food.webp"
+              src="/anka.jpg"
               alt="Restaurang Nanking interiör"
-              width={900}
-              height={600}
+              width={243}
+              height={304}
             />
             <div className="about-cn-stamp">南</div>
           </div>
 
           {/* Text column */}
           <div>
-            <div className="ornament-line">
-              <span className="orn">✦</span>
-            </div>
-
             <p className="about-body-lead">
               Hos restaurang Nanking serverar vi mat för alla smaker. Restaurang Nanking är en
               familjeägd restaurang som grundades för över 30 år sedan.
