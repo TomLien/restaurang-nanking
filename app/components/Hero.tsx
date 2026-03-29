@@ -75,7 +75,7 @@ export default function Hero() {
         </div>
 
         <div className="hero-taglines">
-          <p className="hero-tagline">Äkta kinesisk mat sedan 1987 </p>
+          <p className="hero-tagline">Äkta kinesisk mat sedan 1993</p>
           <p className="hero-tagline">i Göteborg</p>
         </div>
 

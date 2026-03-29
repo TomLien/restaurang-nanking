@@ -127,32 +127,32 @@ export default function Menu({ categories, defaultCategoryId }: Props) {
               return price && price !== "0";
             })
             .map((item, index) => (
-            <div key={item.number ?? `item-${index}`} className="menu-item">
-              {item.number && <span className="menu-num">{item.number}</span>}
-              <div>
-                <div className="menu-title">{item.title}</div>
-                <p className="menu-desc">{item.description}</p>
-              </div>
-              <div className="menu-price-col">
-                <span className="menu-price">
-                  {formatPrice(item.takeawayPrice, item.aLaCartePrice, priceMode)}
-                </span>
-                {item.heat > 0 && (
-                  <span className="menu-heat" aria-label={`Styrka ${item.heat} av 3`}>
-                    {Array.from({ length: item.heat }, (_, i) => (
-                      <img
-                        key={i}
-                        src="/chili-icon.svg"
-                        alt=""
-                        className="menu-heat-icon"
-                        aria-hidden="true"
-                      />
-                    ))}
+              <div key={item.number ?? `item-${index}`} className="menu-item">
+                {item.number && <span className="menu-num">{item.number}.</span>}
+                <div>
+                  <div className="menu-title">{item.title}</div>
+                  <p className="menu-desc">{item.description}</p>
+                </div>
+                <div className="menu-price-col">
+                  <span className="menu-price">
+                    {formatPrice(item.takeawayPrice, item.aLaCartePrice, priceMode)}
                   </span>
-                )}
+                  {item.heat > 0 && (
+                    <span className="menu-heat" aria-label={`Styrka ${item.heat} av 3`}>
+                      {Array.from({ length: item.heat }, (_, i) => (
+                        <img
+                          key={i}
+                          src="/chili-icon.svg"
+                          alt=""
+                          className="menu-heat-icon"
+                          aria-hidden="true"
+                        />
+                      ))}
+                    </span>
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
 
         {/* SSR fallback for SEO */}
