@@ -32,7 +32,7 @@ export default function Menu({ categories, defaultCategoryId }: Props) {
         </div>
 
         {/* Category tabs */}
-        <nav ref={menuGridRef} aria-label="Menykategorier" style={{ marginBottom: "2.5rem" }}>
+        <nav aria-label="Menykategorier" style={{ marginBottom: "2.5rem" }}>
           <ul
             style={{
               display: "flex",
@@ -69,7 +69,7 @@ export default function Menu({ categories, defaultCategoryId }: Props) {
             ))}
           </ul>
         </nav>
-        <div style={{ textAlign: "center", marginBottom: "2.5rem" }}>
+        <div ref={menuGridRef} style={{ textAlign: "center", marginBottom: "2.5rem" }}>
           <p className="menu-price-legend">Avhämtning / À la carte priser</p>
           <div className="menu-heat-legend">
             {[
