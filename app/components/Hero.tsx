@@ -28,8 +28,7 @@ export default function Hero() {
         className="hero-bg"
         aria-hidden="true"
         style={{
-          backgroundImage:
-            "url(/hero-image.jpg)",
+          backgroundImage: "url(/hero-image.jpg)",
         }}
       />
 
@@ -78,7 +77,6 @@ export default function Hero() {
           <p className="hero-tagline">Äkta kinesisk mat sedan 1993</p>
           <p className="hero-tagline">i Göteborg</p>
         </div>
-
 
         <div
           style={{

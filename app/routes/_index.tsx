@@ -13,7 +13,7 @@ export async function loader(_args: LoaderFunctionArgs) {
   const categories = await getMenuCategories();
   return {
     categories,
-    defaultCategoryId: categories[0].id,
+    defaultCategoryId: categories[0]?.id ?? "",
   };
 }
 

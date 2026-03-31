@@ -2,6 +2,8 @@ export type MenuItem = {
   number?: string;
   title: string;
   description: string;
+  titleEnglish: string;
+  descriptionEnglish: string;
   takeawayPrice: string;
   aLaCartePrice: string;
   heat: number;
@@ -10,6 +12,7 @@ export type MenuItem = {
 export type MenuCategory = {
   id: string;
   label: string;
+  labelEnglish: string;
   items: MenuItem[];
 };
 
@@ -17,11 +20,15 @@ export const menuCategories: MenuCategory[] = [
   {
     id: "forratter",
     label: "Förrätter",
+    labelEnglish: "Appetizers",
     items: [
       {
         number: "1",
         title: "Vårrulle",
         description: "Krispig vårrulle fylld med grönsaker och glasnudlar, serveras med sötsurkräm",
+        titleEnglish: "Spring Roll",
+        descriptionEnglish:
+          "Crispy spring roll filled with vegetables and glass noodles, served with sweet and sour cream",
         takeawayPrice: "89",
         aLaCartePrice: "89",
         heat: 0,
@@ -30,6 +37,8 @@ export const menuCategories: MenuCategory[] = [
         number: "2",
         title: "Räkdumplings (4 st)",
         description: "Ångkokta dumplings med tiger räkor, ingefära och salladslök",
+        titleEnglish: "Shrimp Dumplings (4 pcs)",
+        descriptionEnglish: "Steamed dumplings with tiger prawns, ginger and spring onion",
         takeawayPrice: "115",
         aLaCartePrice: "115",
         heat: 0,
@@ -38,6 +47,9 @@ export const menuCategories: MenuCategory[] = [
         number: "3",
         title: "Pekingankor (pannkakor)",
         description: "Klassisk Peking-and med tunna pannkakor, hoisinsås, gurka och vårlök",
+        titleEnglish: "Peking Duck (pancakes)",
+        descriptionEnglish:
+          "Classic Peking duck with thin pancakes, hoisin sauce, cucumber and spring onion",
         takeawayPrice: "145",
         aLaCartePrice: "145",
         heat: 0,
@@ -46,6 +58,9 @@ export const menuCategories: MenuCategory[] = [
         number: "4",
         title: "Sesamtoast",
         description: "Friterat bröd toppat med räkfärs och sesamfrön, serveras med sötsursås",
+        titleEnglish: "Sesame Toast",
+        descriptionEnglish:
+          "Deep-fried bread topped with shrimp paste and sesame seeds, served with sweet and sour sauce",
         takeawayPrice: "95",
         aLaCartePrice: "95",
         heat: 0,
@@ -54,6 +69,8 @@ export const menuCategories: MenuCategory[] = [
         number: "5",
         title: "Edamame",
         description: "Ångkokta edamamebönor med flingsalt och chili",
+        titleEnglish: "Edamame",
+        descriptionEnglish: "Steamed edamame beans with flake salt and chili",
         takeawayPrice: "69",
         aLaCartePrice: "69",
         heat: 0,
@@ -62,6 +79,9 @@ export const menuCategories: MenuCategory[] = [
         number: "6",
         title: "Kycklingsallad",
         description: "Strimlad kyckling med glasnudlar, koriander, jordnötter och sesamdressing",
+        titleEnglish: "Chicken Salad",
+        descriptionEnglish:
+          "Shredded chicken with glass noodles, cilantro, peanuts and sesame dressing",
         takeawayPrice: "105",
         aLaCartePrice: "105",
         heat: 0,
@@ -70,6 +90,8 @@ export const menuCategories: MenuCategory[] = [
         number: "7",
         title: "Gyoza (6 st)",
         description: "Pankokta dumplings med fläsk och kål, serveras med dippsås",
+        titleEnglish: "Gyoza (6 pcs)",
+        descriptionEnglish: "Pan-fried dumplings with pork and cabbage, served with dipping sauce",
         takeawayPrice: "99",
         aLaCartePrice: "99",
         heat: 0,
@@ -78,6 +100,8 @@ export const menuCategories: MenuCategory[] = [
         number: "8",
         title: "Wonton friterade (6 st)",
         description: "Krispiga wontons fyllda med räk och fläskfärs, serveras med plomonsås",
+        titleEnglish: "Fried Wontons (6 pcs)",
+        descriptionEnglish: "Crispy wontons filled with shrimp and pork, served with plum sauce",
         takeawayPrice: "99",
         aLaCartePrice: "99",
         heat: 0,
@@ -87,11 +111,14 @@ export const menuCategories: MenuCategory[] = [
   {
     id: "soppor",
     label: "Soppor",
+    labelEnglish: "Soups",
     items: [
       {
         number: "20",
         title: "Tom Yum Kung",
         description: "Kryddig thaisoppa med räkor, citrongräs, lime och galangal",
+        titleEnglish: "Tom Yum Kung",
+        descriptionEnglish: "Spicy Thai soup with prawns, lemongrass, lime and galangal",
         takeawayPrice: "129",
         aLaCartePrice: "129",
         heat: 0,
@@ -100,6 +127,8 @@ export const menuCategories: MenuCategory[] = [
         number: "21",
         title: "Wontonsoppa",
         description: "Klar kycklingbuljong med räk-wontons, pak choi och sesamolja",
+        titleEnglish: "Wonton Soup",
+        descriptionEnglish: "Clear chicken broth with shrimp wontons, pak choi and sesame oil",
         takeawayPrice: "115",
         aLaCartePrice: "115",
         heat: 0,
@@ -108,6 +137,8 @@ export const menuCategories: MenuCategory[] = [
         number: "22",
         title: "Hot & Sour soppa",
         description: "Traditionell het och syrlig soppa med tofu, bambu och svamp",
+        titleEnglish: "Hot & Sour Soup",
+        descriptionEnglish: "Traditional hot and sour soup with tofu, bamboo and mushrooms",
         takeawayPrice: "109",
         aLaCartePrice: "109",
         heat: 0,
@@ -116,6 +147,8 @@ export const menuCategories: MenuCategory[] = [
         number: "23",
         title: "Misosoppa med räkor",
         description: "Len misosoppa med tiger räkor, wakame och tofu",
+        titleEnglish: "Miso Soup with Prawns",
+        descriptionEnglish: "Smooth miso soup with tiger prawns, wakame and tofu",
         takeawayPrice: "119",
         aLaCartePrice: "119",
         heat: 0,
@@ -124,6 +157,8 @@ export const menuCategories: MenuCategory[] = [
         number: "24",
         title: "Kyckling Laksa",
         description: "Kokosmjölksbaserad nudelsoppa med kyckling, böngroddor och basilika",
+        titleEnglish: "Chicken Laksa",
+        descriptionEnglish: "Coconut milk-based noodle soup with chicken, bean sprouts and basil",
         takeawayPrice: "139",
         aLaCartePrice: "139",
         heat: 0,
@@ -132,6 +167,8 @@ export const menuCategories: MenuCategory[] = [
         number: "25",
         title: "Pekingnudelsoppa",
         description: "Rikbuljong med handdragna nudlar, fläsk och syltad salladslök",
+        titleEnglish: "Peking Noodle Soup",
+        descriptionEnglish: "Rich broth with hand-pulled noodles, pork and pickled spring onion",
         takeawayPrice: "125",
         aLaCartePrice: "125",
         heat: 0,
@@ -141,11 +178,15 @@ export const menuCategories: MenuCategory[] = [
   {
     id: "kyckling",
     label: "Kyckling",
+    labelEnglish: "Chicken",
     items: [
       {
         number: "40",
         title: "General Tso's Kyckling",
         description: "Krispig kyckling i sötstark sås med torkad chili och sesamfrön",
+        titleEnglish: "General Tso's Chicken",
+        descriptionEnglish:
+          "Crispy chicken in sweet and spicy sauce with dried chili and sesame seeds",
         takeawayPrice: "175",
         aLaCartePrice: "175",
         heat: 0,
@@ -154,6 +195,8 @@ export const menuCategories: MenuCategory[] = [
         number: "41",
         title: "Kung Pao Kyckling",
         description: "Wokad kyckling med cashewnötter, paprika och sichuanpeppar",
+        titleEnglish: "Kung Pao Chicken",
+        descriptionEnglish: "Wok-fried chicken with cashew nuts, bell pepper and Sichuan pepper",
         takeawayPrice: "169",
         aLaCartePrice: "169",
         heat: 0,
@@ -162,6 +205,8 @@ export const menuCategories: MenuCategory[] = [
         number: "42",
         title: "Citronkyckling",
         description: "Panerad kyckling i syrlig lemonsås med färsk ingefära",
+        titleEnglish: "Lemon Chicken",
+        descriptionEnglish: "Breaded chicken in tangy lemon sauce with fresh ginger",
         takeawayPrice: "165",
         aLaCartePrice: "165",
         heat: 0,
@@ -170,6 +215,9 @@ export const menuCategories: MenuCategory[] = [
         number: "43",
         title: "Hoisin Kyckling",
         description: "Mört kycklingbröst wokat med broccoli, pak choi och hoisinsås",
+        titleEnglish: "Hoisin Chicken",
+        descriptionEnglish:
+          "Tender chicken breast wok-fried with broccoli, pak choi and hoisin sauce",
         takeawayPrice: "169",
         aLaCartePrice: "169",
         heat: 0,
@@ -178,6 +226,9 @@ export const menuCategories: MenuCategory[] = [
         number: "44",
         title: "Sichuankyckling",
         description: "Kryddig kyckling med sichuanpeppar, vitlök, ingefära och grön paprika",
+        titleEnglish: "Sichuan Chicken",
+        descriptionEnglish:
+          "Spicy chicken with Sichuan pepper, garlic, ginger and green bell pepper",
         takeawayPrice: "179",
         aLaCartePrice: "179",
         heat: 0,
@@ -186,6 +237,9 @@ export const menuCategories: MenuCategory[] = [
         number: "45",
         title: "Stekt kyckling med cashew",
         description: "Wokad kycklingfilé med cashewnötter, paprika och ostronsås",
+        titleEnglish: "Fried Chicken with Cashews",
+        descriptionEnglish:
+          "Wok-fried chicken fillet with cashew nuts, bell pepper and oyster sauce",
         takeawayPrice: "172",
         aLaCartePrice: "172",
         heat: 0,
@@ -194,6 +248,8 @@ export const menuCategories: MenuCategory[] = [
         number: "46",
         title: "Kyckling med svamp",
         description: "Kycklingbröst med shitake- och ostronsvamp i lätt sojasås",
+        titleEnglish: "Chicken with Mushrooms",
+        descriptionEnglish: "Chicken breast with shiitake and oyster mushrooms in light soy sauce",
         takeawayPrice: "168",
         aLaCartePrice: "168",
         heat: 0,
@@ -203,11 +259,15 @@ export const menuCategories: MenuCategory[] = [
   {
     id: "flask",
     label: "Fläsk",
+    labelEnglish: "Pork",
     items: [
       {
         number: "55",
         title: "Sweet & Sour Fläsk",
         description: "Klassisk sötsurfläsk med ananas, paprika och lök i röd sötsursås",
+        titleEnglish: "Sweet & Sour Pork",
+        descriptionEnglish:
+          "Classic sweet and sour pork with pineapple, bell pepper and onion in red sweet and sour sauce",
         takeawayPrice: "169",
         aLaCartePrice: "169",
         heat: 0,
@@ -216,6 +276,8 @@ export const menuCategories: MenuCategory[] = [
         number: "56",
         title: "Char Siu",
         description: "Kantonesiskt grillat fläsk marinerat i honung, sojasås och fem-kryddor",
+        titleEnglish: "Char Siu",
+        descriptionEnglish: "Cantonese grilled pork marinated in honey, soy sauce and five-spice",
         takeawayPrice: "179",
         aLaCartePrice: "179",
         heat: 0,
@@ -224,6 +286,8 @@ export const menuCategories: MenuCategory[] = [
         number: "57",
         title: "Mapo Tofu med Fläsk",
         description: "Mjuk tofu med fläskfärs i het sichuansås med bönpasta",
+        titleEnglish: "Mapo Tofu with Pork",
+        descriptionEnglish: "Soft tofu with minced pork in hot Sichuan sauce with bean paste",
         takeawayPrice: "165",
         aLaCartePrice: "165",
         heat: 0,
@@ -232,6 +296,9 @@ export const menuCategories: MenuCategory[] = [
         number: "58",
         title: "Mu Shu Fläsk",
         description: "Strimlat fläsk med ägg, svamp och kål, serveras med tunna pannkakor",
+        titleEnglish: "Mu Shu Pork",
+        descriptionEnglish:
+          "Shredded pork with egg, mushrooms and cabbage, served with thin pancakes",
         takeawayPrice: "172",
         aLaCartePrice: "172",
         heat: 0,
@@ -240,6 +307,9 @@ export const menuCategories: MenuCategory[] = [
         number: "59",
         title: "Fläsk med svartbönssås",
         description: "Mört fläsk wokat med paprika och lök i klassisk svartbönssås",
+        titleEnglish: "Pork in Black Bean Sauce",
+        descriptionEnglish:
+          "Tender pork wok-fried with bell pepper and onion in classic black bean sauce",
         takeawayPrice: "169",
         aLaCartePrice: "169",
         heat: 0,
@@ -248,6 +318,8 @@ export const menuCategories: MenuCategory[] = [
         number: "60",
         title: "Bubbelfläsk (dongpo)",
         description: "Kinesiskt ångkokt sidfläsk med hasselnötsbryn sojasås och bok choy",
+        titleEnglish: "Dongpo Pork",
+        descriptionEnglish: "Chinese braised pork belly with caramelized soy sauce and bok choy",
         takeawayPrice: "189",
         aLaCartePrice: "189",
         heat: 0,
@@ -257,11 +329,15 @@ export const menuCategories: MenuCategory[] = [
   {
     id: "notkott",
     label: "Nötkött",
+    labelEnglish: "Beef",
     items: [
       {
         number: "70",
         title: "Mongolisk Biff",
         description: "Möra nötköttstrimlor wokade med lök och salladslök i söt sojasås",
+        titleEnglish: "Mongolian Beef",
+        descriptionEnglish:
+          "Tender beef strips wok-fried with onion and spring onion in sweet soy sauce",
         takeawayPrice: "189",
         aLaCartePrice: "189",
         heat: 0,
@@ -270,6 +346,8 @@ export const menuCategories: MenuCategory[] = [
         number: "71",
         title: "Biff med broccoli",
         description: "Klassisk kantonesisk biff och broccoli i ostronsås",
+        titleEnglish: "Beef with Broccoli",
+        descriptionEnglish: "Classic Cantonese beef and broccoli in oyster sauce",
         takeawayPrice: "185",
         aLaCartePrice: "185",
         heat: 0,
@@ -278,6 +356,8 @@ export const menuCategories: MenuCategory[] = [
         number: "72",
         title: "Sichuanbiff",
         description: "Kryddig nötköttswok med sichuanpeppar, chili och grön paprika",
+        titleEnglish: "Sichuan Beef",
+        descriptionEnglish: "Spicy beef stir-fry with Sichuan pepper, chili and green bell pepper",
         takeawayPrice: "195",
         aLaCartePrice: "195",
         heat: 0,
@@ -286,6 +366,8 @@ export const menuCategories: MenuCategory[] = [
         number: "73",
         title: "Black Pepper Biff",
         description: "Saftig biff med grovmalen svartpeppar, lök och paprika",
+        titleEnglish: "Black Pepper Beef",
+        descriptionEnglish: "Juicy beef with coarsely ground black pepper, onion and bell pepper",
         takeawayPrice: "199",
         aLaCartePrice: "199",
         heat: 0,
@@ -294,6 +376,9 @@ export const menuCategories: MenuCategory[] = [
         number: "74",
         title: "Nötkött med ostron och svamp",
         description: "Mört nötkött wokat med ostron- och shitakesvamp i ostronsås",
+        titleEnglish: "Beef with Oyster and Mushrooms",
+        descriptionEnglish:
+          "Tender beef wok-fried with oyster and shiitake mushrooms in oyster sauce",
         takeawayPrice: "192",
         aLaCartePrice: "192",
         heat: 0,
@@ -302,6 +387,8 @@ export const menuCategories: MenuCategory[] = [
         number: "75",
         title: "Tangerinbiff",
         description: "Krispig biff i sötstark mandarin-apelsinsås med torkad chili",
+        titleEnglish: "Tangerine Beef",
+        descriptionEnglish: "Crispy beef in sweet and spicy mandarin orange sauce with dried chili",
         takeawayPrice: "195",
         aLaCartePrice: "195",
         heat: 0,
@@ -311,11 +398,15 @@ export const menuCategories: MenuCategory[] = [
   {
     id: "fisk",
     label: "Fisk & Skaldjur",
+    labelEnglish: "Fish & Seafood",
     items: [
       {
         number: "85",
         title: "Stir-fry Räkor",
         description: "Jumboräkor wokade med vitlök, ingefära och grönsaker i ostronsås",
+        titleEnglish: "Stir-fry Prawns",
+        descriptionEnglish:
+          "Jumbo prawns wok-fried with garlic, ginger and vegetables in oyster sauce",
         takeawayPrice: "199",
         aLaCartePrice: "199",
         heat: 0,
@@ -324,6 +415,8 @@ export const menuCategories: MenuCategory[] = [
         number: "86",
         title: "Cantonese Ångkokt Fisk",
         description: "Hel ångad fisk med ingefära, salladslök och lätt sojasås",
+        titleEnglish: "Cantonese Steamed Fish",
+        descriptionEnglish: "Whole steamed fish with ginger, spring onion and light soy sauce",
         takeawayPrice: "225",
         aLaCartePrice: "225",
         heat: 0,
@@ -332,6 +425,8 @@ export const menuCategories: MenuCategory[] = [
         number: "87",
         title: "Kung Pao Räkor",
         description: "Kryddiga räkor med cashewnötter, paprika och sichuanpeppar",
+        titleEnglish: "Kung Pao Prawns",
+        descriptionEnglish: "Spicy prawns with cashew nuts, bell pepper and Sichuan pepper",
         takeawayPrice: "205",
         aLaCartePrice: "205",
         heat: 0,
@@ -340,6 +435,8 @@ export const menuCategories: MenuCategory[] = [
         number: "88",
         title: "Krabba med Ingefära",
         description: "Stir-fry krabba med färsk ingefära, salladslök och sojasås",
+        titleEnglish: "Crab with Ginger",
+        descriptionEnglish: "Stir-fried crab with fresh ginger, spring onion and soy sauce",
         takeawayPrice: "245",
         aLaCartePrice: "245",
         heat: 0,
@@ -348,6 +445,9 @@ export const menuCategories: MenuCategory[] = [
         number: "89",
         title: "Kokosmjölksgarnaler",
         description: "Räkor i krämig kokosmjölkssås med citrongräs och kaffirlimeblad",
+        titleEnglish: "Coconut Milk Prawns",
+        descriptionEnglish:
+          "Prawns in creamy coconut milk sauce with lemongrass and kaffir lime leaves",
         takeawayPrice: "209",
         aLaCartePrice: "209",
         heat: 0,
@@ -356,6 +456,8 @@ export const menuCategories: MenuCategory[] = [
         number: "90",
         title: "Krispy Torsk",
         description: "Krispig torskfilé med sötstark sås och wokade pak choi",
+        titleEnglish: "Crispy Cod",
+        descriptionEnglish: "Crispy cod fillet with sweet and spicy sauce and wok-fried pak choi",
         takeawayPrice: "195",
         aLaCartePrice: "195",
         heat: 0,
@@ -364,6 +466,9 @@ export const menuCategories: MenuCategory[] = [
         number: "91",
         title: "Havskatt Sichuanstil",
         description: "Kryddig havskattsfilé med sichuanbönpasta, doubanjiang och sesamolja",
+        titleEnglish: "Sichuan Style Catfish",
+        descriptionEnglish:
+          "Spicy catfish fillet with Sichuan bean paste, doubanjiang and sesame oil",
         takeawayPrice: "215",
         aLaCartePrice: "215",
         heat: 0,
@@ -373,11 +478,15 @@ export const menuCategories: MenuCategory[] = [
   {
     id: "vegetariskt",
     label: "Vegetariskt",
+    labelEnglish: "Vegetarian",
     items: [
       {
         number: "100",
         title: "Mapo Tofu",
         description: "Mjuk tofu i het sichuansås med doubanjiang och sesamolja (vegansk)",
+        titleEnglish: "Mapo Tofu",
+        descriptionEnglish:
+          "Soft tofu in hot Sichuan sauce with doubanjiang and sesame oil (vegan)",
         takeawayPrice: "155",
         aLaCartePrice: "155",
         heat: 0,
@@ -386,6 +495,8 @@ export const menuCategories: MenuCategory[] = [
         number: "101",
         title: "Wokad Pak Choi",
         description: "Pak choi med vitlök och ostronsås (kan göras vegansk)",
+        titleEnglish: "Wok-fried Pak Choi",
+        descriptionEnglish: "Pak choi with garlic and oyster sauce (can be made vegan)",
         takeawayPrice: "139",
         aLaCartePrice: "139",
         heat: 0,
@@ -394,6 +505,9 @@ export const menuCategories: MenuCategory[] = [
         number: "102",
         title: "Buddha's Feast",
         description: "Blandade grönsaker och tofu wokat med hoisinsås och sesamfrön (vegansk)",
+        titleEnglish: "Buddha's Feast",
+        descriptionEnglish:
+          "Mixed vegetables and tofu wok-fried with hoisin sauce and sesame seeds (vegan)",
         takeawayPrice: "159",
         aLaCartePrice: "159",
         heat: 0,
@@ -402,6 +516,8 @@ export const menuCategories: MenuCategory[] = [
         number: "103",
         title: "Stir-fry Champinjoner",
         description: "Shitake, ostron- och enokisvamp i svartbönssås med ingefära",
+        titleEnglish: "Stir-fry Mushrooms",
+        descriptionEnglish: "Shiitake, oyster and enoki mushrooms in black bean sauce with ginger",
         takeawayPrice: "149",
         aLaCartePrice: "149",
         heat: 0,
@@ -410,6 +526,8 @@ export const menuCategories: MenuCategory[] = [
         number: "104",
         title: "Gong Bao Tofu",
         description: "Stekt tofu med cashewnötter, paprika och sichuanpeppar (vegansk)",
+        titleEnglish: "Kung Pao Tofu",
+        descriptionEnglish: "Fried tofu with cashew nuts, bell pepper and Sichuan pepper (vegan)",
         takeawayPrice: "155",
         aLaCartePrice: "155",
         heat: 0,
@@ -418,6 +536,8 @@ export const menuCategories: MenuCategory[] = [
         number: "105",
         title: "Vegetarisk Dim Sum (8 st)",
         description: "Ångkokta dumplings med edamame, tofu och svamp (vegansk)",
+        titleEnglish: "Vegetarian Dim Sum (8 pcs)",
+        descriptionEnglish: "Steamed dumplings with edamame, tofu and mushrooms (vegan)",
         takeawayPrice: "139",
         aLaCartePrice: "139",
         heat: 0,
@@ -426,6 +546,8 @@ export const menuCategories: MenuCategory[] = [
         number: "106",
         title: "Chili-Vitlök Aubergine",
         description: "Mjuk aubergine i het chilisås med vitlök och sesamolja (vegansk)",
+        titleEnglish: "Chili-Garlic Eggplant",
+        descriptionEnglish: "Soft eggplant in hot chili sauce with garlic and sesame oil (vegan)",
         takeawayPrice: "149",
         aLaCartePrice: "149",
         heat: 0,
@@ -435,11 +557,14 @@ export const menuCategories: MenuCategory[] = [
   {
     id: "ris-nudlar",
     label: "Ris & Nudlar",
+    labelEnglish: "Rice & Noodles",
     items: [
       {
         number: "115",
         title: "Yangzhou Stekt Ris",
         description: "Klassiskt kantonesiskt stekt ris med räkor, kyckling, ägg och grönsaker",
+        titleEnglish: "Yangzhou Fried Rice",
+        descriptionEnglish: "Classic Cantonese fried rice with prawns, chicken, egg and vegetables",
         takeawayPrice: "149",
         aLaCartePrice: "149",
         heat: 0,
@@ -448,6 +573,8 @@ export const menuCategories: MenuCategory[] = [
         number: "116",
         title: "Pad Thai",
         description: "Risnudlar med räkor, tofu, ägg, böngroddor och jordnötter",
+        titleEnglish: "Pad Thai",
+        descriptionEnglish: "Rice noodles with prawns, tofu, egg, bean sprouts and peanuts",
         takeawayPrice: "159",
         aLaCartePrice: "159",
         heat: 0,
@@ -456,6 +583,8 @@ export const menuCategories: MenuCategory[] = [
         number: "117",
         title: "Lo Mein",
         description: "Mjuka äggdudlar wokade med kyckling, svamp och grönsaker",
+        titleEnglish: "Lo Mein",
+        descriptionEnglish: "Soft egg noodles wok-fried with chicken, mushrooms and vegetables",
         takeawayPrice: "155",
         aLaCartePrice: "155",
         heat: 0,
@@ -464,6 +593,8 @@ export const menuCategories: MenuCategory[] = [
         number: "118",
         title: "Singapore Nudlar",
         description: "Tunna risnudlar med räkor, fläsk, ägg och currykryddor",
+        titleEnglish: "Singapore Noodles",
+        descriptionEnglish: "Thin rice noodles with prawns, pork, egg and curry spices",
         takeawayPrice: "159",
         aLaCartePrice: "159",
         heat: 0,
@@ -472,6 +603,9 @@ export const menuCategories: MenuCategory[] = [
         number: "119",
         title: "Vegetariskt Stekt Ris",
         description: "Wokat jasminris med tofu, grönsaker, ägg och sojasås (kan göras vegansk)",
+        titleEnglish: "Vegetarian Fried Rice",
+        descriptionEnglish:
+          "Wok-fried jasmine rice with tofu, vegetables, egg and soy sauce (can be made vegan)",
         takeawayPrice: "139",
         aLaCartePrice: "139",
         heat: 0,
@@ -480,6 +614,8 @@ export const menuCategories: MenuCategory[] = [
         number: "120",
         title: "Dan Dan Nudlar",
         description: "Sichuanska nudlar med fläskfärs, tahini, chiliolja och salladslök",
+        titleEnglish: "Dan Dan Noodles",
+        descriptionEnglish: "Sichuan noodles with minced pork, tahini, chili oil and spring onion",
         takeawayPrice: "149",
         aLaCartePrice: "149",
         heat: 0,
@@ -488,6 +624,8 @@ export const menuCategories: MenuCategory[] = [
         number: "121",
         title: "Chow Fun (Breda risnudlar)",
         description: "Wokade breda risnudlar med biff, böngroddor och sojasås",
+        titleEnglish: "Chow Fun (Flat rice noodles)",
+        descriptionEnglish: "Wok-fried flat rice noodles with beef, bean sprouts and soy sauce",
         takeawayPrice: "165",
         aLaCartePrice: "165",
         heat: 0,
@@ -496,6 +634,8 @@ export const menuCategories: MenuCategory[] = [
         number: "122",
         title: "Kokosmjölksris",
         description: "Ångat jasminris kokt i kokosmjölk (vegansk, sidorätt)",
+        titleEnglish: "Coconut Milk Rice",
+        descriptionEnglish: "Steamed jasmine rice cooked in coconut milk (vegan, side dish)",
         takeawayPrice: "49",
         aLaCartePrice: "49",
         heat: 0,

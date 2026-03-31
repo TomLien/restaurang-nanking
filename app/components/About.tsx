@@ -19,12 +19,7 @@ export default function About() {
         >
           {/* Image column */}
           <div className="about-img-wrap">
-            <img
-              src="/anka.jpg"
-              alt="Restaurang Nanking interiör"
-              width={243}
-              height={304}
-            />
+            <img src="/anka.jpg" alt="Restaurang Nanking interiör" width={243} height={304} />
             <div className="about-cn-stamp">南</div>
           </div>
 

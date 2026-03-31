@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import type { MenuCategory } from "~/data/menu";
 
 type PriceMode = "takeaway" | "alaCarte";
+type Language = "sv" | "en";
 
 type Props = {
   categories: MenuCategory[];
@@ -16,11 +17,31 @@ function formatPrice(takeaway: string, alaCarte: string, mode: PriceMode) {
   return "";
 }
 
+const heatLabels: Record<Language, { level: number; label: string }[]> = {
+  sv: [
+    { level: 1, label: "Lite stark" },
+    { level: 2, label: "Mellanstark" },
+    { level: 3, label: "Mycket stark" },
+  ],
+  en: [
+    { level: 1, label: "Mild" },
+    { level: 2, label: "Medium" },
+    { level: 3, label: "Very hot" },
+  ],
+};
+
 export default function Menu({ categories, defaultCategoryId }: Props) {
   const [activeCategoryId, setActiveCategoryId] = useState(defaultCategoryId);
   const [priceMode, setPriceMode] = useState<PriceMode>("takeaway");
+  const [language, setLanguage] = useState<Language>("sv");
   const activeCategory = categories.find((c) => c.id === activeCategoryId) ?? categories[0];
   const menuGridRef = useRef<HTMLDivElement>(null);
+
+  const catLabel = (cat: MenuCategory) => (language === "sv" ? cat.label : cat.labelEnglish);
+  const itemTitle = (item: { title: string; titleEnglish: string }) =>
+    language === "sv" ? item.title : item.titleEnglish;
+  const itemDesc = (item: { description: string; descriptionEnglish: string }) =>
+    language === "sv" ? item.description : item.descriptionEnglish;
 
   return (
     <section id="meny" className="section-pad" style={{ background: "var(--ink)" }}>
@@ -28,11 +49,36 @@ export default function Menu({ categories, defaultCategoryId }: Props) {
         {/* Section header */}
         <div style={{ textAlign: "center", marginBottom: "2.5rem" }}>
           <p className="section-label section-label-light">— 菜單 —</p>
-          <h2 className="section-title section-title-light">Meny</h2>
+          <h2 className="section-title section-title-light">
+            {language === "sv" ? "Meny" : "Menu"}
+          </h2>
+        </div>
+
+        {/* Language toggle */}
+        <div style={{ textAlign: "center", marginBottom: "1.5rem" }}>
+          <div className="menu-price-toggle">
+            <button
+              type="button"
+              className={`menu-price-toggle-btn${language === "sv" ? " active" : ""}`}
+              onClick={() => setLanguage("sv")}
+            >
+              Svenska
+            </button>
+            <button
+              type="button"
+              className={`menu-price-toggle-btn${language === "en" ? " active" : ""}`}
+              onClick={() => setLanguage("en")}
+            >
+              English
+            </button>
+          </div>
         </div>
 
         {/* Category tabs */}
-        <nav aria-label="Menykategorier" style={{ marginBottom: "2.5rem" }}>
+        <nav
+          aria-label={language === "sv" ? "Menykategorier" : "Menu categories"}
+          style={{ marginBottom: "2.5rem" }}
+        >
           <ul
             style={{
               display: "flex",
@@ -64,7 +110,7 @@ export default function Menu({ categories, defaultCategoryId }: Props) {
                   }}
                   className={`menu-tab${activeCategoryId === category.id ? " active" : ""}`}
                 >
-                  {category.label}
+                  {catLabel(category)}
                 </button>
               </li>
             ))}
@@ -77,7 +123,7 @@ export default function Menu({ categories, defaultCategoryId }: Props) {
               className={`menu-price-toggle-btn${priceMode === "takeaway" ? " active" : ""}`}
               onClick={() => setPriceMode("takeaway")}
             >
-              Avhämtning
+              {language === "sv" ? "Avhämtning" : "Takeaway"}
             </button>
             <button
               type="button"
@@ -88,11 +134,7 @@ export default function Menu({ categories, defaultCategoryId }: Props) {
             </button>
           </div>
           <div className="menu-heat-legend">
-            {[
-              { level: 1, label: "Lite stark" },
-              { level: 2, label: "Mellanstark" },
-              { level: 3, label: "Mycket stark" },
-            ].map(({ level, label }) => (
+            {heatLabels[language].map(({ level, label }) => (
               <span key={level} className="menu-heat-legend-item">
                 {Array.from({ length: level }, (_, i) => (
                   <img
@@ -130,8 +172,8 @@ export default function Menu({ categories, defaultCategoryId }: Props) {
               <div key={item.number ?? `item-${index}`} className="menu-item">
                 {item.number && <span className="menu-num">{item.number}.</span>}
                 <div>
-                  <div className="menu-title">{item.title}</div>
-                  <p className="menu-desc">{item.description}</p>
+                  <div className="menu-title">{itemTitle(item)}</div>
+                  <p className="menu-desc">{itemDesc(item)}</p>
                 </div>
                 <div className="menu-price-col">
                   <span className="menu-price">
@@ -161,12 +203,12 @@ export default function Menu({ categories, defaultCategoryId }: Props) {
             .filter((c) => c.id !== activeCategory.id)
             .map((category) => (
               <div key={category.id}>
-                <h3>{category.label}</h3>
+                <h3>{catLabel(category)}</h3>
                 {category.items.map((item, index) => (
                   <div key={item.number ?? `ssr-${index}`}>
                     {item.number && <span>{item.number}</span>}
-                    <span>{item.title}</span>
-                    <span>{item.description}</span>
+                    <span>{itemTitle(item)}</span>
+                    <span>{itemDesc(item)}</span>
                     <span>{formatPrice(item.takeawayPrice, item.aLaCartePrice, priceMode)}</span>
                   </div>
                 ))}

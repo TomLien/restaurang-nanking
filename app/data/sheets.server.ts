@@ -25,7 +25,9 @@ async function fetchSheetTabs(spreadsheetId: string): Promise<SheetTab[]> {
   const tabs: SheetTab[] = [];
   const re = /items\.push\(\{name:\s*"([^"]+)"[^}]*gid:\s*"([^"]+)"/g;
   for (const match of html.matchAll(re)) {
-    tabs.push({ name: match[1], gid: match[2] });
+    // Unescape forward slash that Google Sheets encodes as \/
+    const unescapedName = match[1].replace(/\\\//g, "/");
+    tabs.push({ name: unescapedName, gid: match[2] });
   }
   return tabs;
 }
@@ -90,12 +92,16 @@ function rowToMenuItem(row: Record<string, string>): MenuItem | null {
   const aLaCartePrice = row.aLaCartePrice?.trim();
   const title = row.title;
   const description = row.description;
+  const titleEnglish = row.titleEnglish;
+  const descriptionEnglish = row.descriptionEnglish;
   if (!title || !takeawayPrice || !aLaCartePrice) return null;
   const heat = Number(row.heat) || 0;
   return {
     ...(number ? { number } : {}),
     title,
     description: description ?? "",
+    titleEnglish: titleEnglish ?? "",
+    descriptionEnglish: descriptionEnglish ?? "",
     takeawayPrice,
     aLaCartePrice,
     heat,
@@ -108,7 +114,10 @@ async function fetchAllCategories(spreadsheetId: string): Promise<MenuCategory[]
     tabs.map(async (tab) => {
       const rows = await fetchSheetTab(spreadsheetId, tab.gid);
       const items = rows.map(rowToMenuItem).filter((item): item is MenuItem => item !== null);
-      return { id: labelToId(tab.name), label: tab.name, items };
+      const [label, labelEnglish] = tab.name.includes("/")
+        ? tab.name.split("/", 2).map((s) => s.trim())
+        : [tab.name, tab.name];
+      return { id: labelToId(label), label, labelEnglish, items };
     }),
   );
   return categories.filter((c) => c.items.length > 0);

@@ -46,7 +46,6 @@ body {
 }
 
 @keyframes lanternSway {
-
   0%,
   100% {
     transform: rotate(-2.5deg);
@@ -58,7 +57,6 @@ body {
 }
 
 @keyframes lanternSwayR {
-
   0%,
   100% {
     transform: rotate(2.5deg);
@@ -70,7 +68,6 @@ body {
 }
 
 @keyframes pulse {
-
   0%,
   100% {
     opacity: 0.38;
