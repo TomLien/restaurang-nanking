@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
 import type { LinksFunction } from "react-router";
 import "./app.css";
@@ -117,6 +118,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         {children}
         <ScrollRestoration />
         <Scripts />
+        <Analytics />
       </body>
     </html>
   );
