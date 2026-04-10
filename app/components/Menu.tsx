@@ -1,14 +1,17 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { MenuCategory } from "~/data/menu";
 
-type PriceMode = "takeaway" | "alaCarte";
-type Language = "sv" | "en";
+export type PriceMode = "takeaway" | "alaCarte";
+export type Language = "sv" | "en";
 
 type Props = {
   categories: MenuCategory[];
   defaultCategoryId: string;
+  defaultLanguage?: Language;
+  defaultPriceMode?: PriceMode;
+  shouldScrollToMenu?: boolean;
 };
 
 function formatPrice(takeaway: string, alaCarte: string, mode: PriceMode) {
@@ -30,12 +33,26 @@ const heatLabels: Record<Language, { level: number; label: string }[]> = {
   ],
 };
 
-export default function Menu({ categories, defaultCategoryId }: Props) {
+export default function Menu({
+  categories,
+  defaultCategoryId,
+  defaultLanguage = "sv",
+  defaultPriceMode = "takeaway",
+  shouldScrollToMenu = false,
+}: Props) {
   const [activeCategoryId, setActiveCategoryId] = useState(defaultCategoryId);
-  const [priceMode, setPriceMode] = useState<PriceMode>("takeaway");
-  const [language, setLanguage] = useState<Language>("sv");
+  const [priceMode, setPriceMode] = useState<PriceMode>(defaultPriceMode);
+  const [language, setLanguage] = useState<Language>(defaultLanguage);
   const activeCategory = categories.find((c) => c.id === activeCategoryId) ?? categories[0];
   const menuGridRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (shouldScrollToMenu && menuGridRef.current) {
+      const navHeight = document.querySelector("nav")?.getBoundingClientRect().height ?? 0;
+      const top = menuGridRef.current.getBoundingClientRect().top + window.scrollY - navHeight;
+      window.scrollTo({ top, behavior: "smooth" });
+    }
+  }, [shouldScrollToMenu]);
 
   const catLabel = (cat: MenuCategory) => (language === "sv" ? cat.label : cat.labelEnglish);
   const itemTitle = (item: { title: string; titleEnglish: string }) =>

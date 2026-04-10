@@ -4,21 +4,34 @@ import About from "~/components/About";
 import Carousel from "~/components/Carousel";
 import Hero from "~/components/Hero";
 import Location from "~/components/Location";
-import Menu from "~/components/Menu";
+import Menu, { Language, PriceMode } from "~/components/Menu";
 import Nav from "~/components/Nav";
 import OpeningHours from "~/components/OpeningHours";
 import { getMenuCategories } from "~/data/sheets.server";
 
-export async function loader(_args: LoaderFunctionArgs) {
+export async function loader({ request }: LoaderFunctionArgs): Promise<{
+  categories: Awaited<ReturnType<typeof getMenuCategories>>;
+  defaultCategoryId: string;
+  defaultLanguage: Language;
+  defaultPriceMode: PriceMode;
+  shouldScrollToMenu: boolean;
+}> {
   const categories = await getMenuCategories();
+  const searchParams = new URL(request.url).searchParams;
+  const lang = searchParams.get("lang");
+  const priceMode = searchParams.get("priceMode");
   return {
     categories,
     defaultCategoryId: categories[0]?.id ?? "",
+    defaultLanguage: lang === "en" ? "en" : "sv",
+    defaultPriceMode: priceMode === "alaCarte" ? "alaCarte" : "takeaway",
+    shouldScrollToMenu: lang !== null || priceMode !== null,
   };
 }
 
 export default function Index() {
-  const { categories, defaultCategoryId } = useLoaderData<typeof loader>();
+  const { categories, defaultCategoryId, defaultLanguage, defaultPriceMode, shouldScrollToMenu } =
+    useLoaderData<typeof loader>();
 
   return (
     <>
@@ -26,7 +39,13 @@ export default function Index() {
       <Hero />
       <Carousel />
       <main>
-        <Menu categories={categories} defaultCategoryId={defaultCategoryId} />
+        <Menu
+          categories={categories}
+          defaultCategoryId={defaultCategoryId}
+          defaultLanguage={defaultLanguage}
+          defaultPriceMode={defaultPriceMode}
+          shouldScrollToMenu={shouldScrollToMenu}
+        />
         <About />
         <OpeningHours />
         <Location />

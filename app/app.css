@@ -702,6 +702,7 @@ body {
   position: relative;
   overflow: visible;
   width: fit-content;
+  margin: 0 auto;
 }
 
 .about-img-wrap::before {
