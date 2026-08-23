@@ -37,9 +37,9 @@ export default function Index() {
     <>
       <Nav />
       <Hero />
-      <div style={{ display: "flex", justifyContent: "center", margin: "2rem 0" }}>
+      {/* <div style={{ display: "flex", justifyContent: "center", margin: "2rem 0" }}>
         <img src="/semester.jpg" alt="Semester" width={600} />
-      </div>
+      </div> */}
       <Carousel />
       <main>
         <Menu
