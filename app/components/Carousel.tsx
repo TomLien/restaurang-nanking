@@ -151,11 +151,11 @@ export default function Carousel() {
               <p
                 style={{
                   fontFamily: "'Libre Baskerville', Georgia, serif",
-                  fontSize: "clamp(1.1rem, 2.2vw, 0.92rem)",
+                  fontSize: "clamp(0.8rem, 2.2vw, 0.92rem)",
                   color: "rgba(245,239,228,0.82)",
                   lineHeight: 1.65,
                   margin: 0,
-                  maxWidth: "70ch",
+                  maxWidth: "52ch",
                 }}
               >
                 {slide.description}
