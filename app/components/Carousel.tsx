@@ -13,7 +13,7 @@ const slides: CarouselSlide[] = [
       "https://images.unsplash.com/photo-1585032226651-759b368d7246?q=80&w=1384&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     title: "Dagens Lunch 140:-",
     description:
-      "Välj fritt från lunchmenyn mellan kyckling, biff, fläsk & vegetariska rätter. Inklusive sallad, valfri dryck & kaffe. Avhämtning 125:- (exklusive dricka & sallad).",
+      "Välj fritt från lunchmenyn. Inklusive sallad, valfri dryck & kaffe. Avhämtning 125:- (exklusive dricka & sallad).",
     tag: "Erbjudande",
   },
   {
@@ -83,7 +83,7 @@ export default function Carousel() {
             style={{
               position: "relative",
               width: "100%",
-              aspectRatio: "16 / 7",
+              aspectRatio: "16 / 9",
               overflow: "hidden",
               animation: "slideIn 0.9s ease both",
             }}
